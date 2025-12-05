@@ -2,56 +2,63 @@ project:
   title: "report"
   output-dir: "_output"
 
+lang: ru-RU
 standalone: true
 self-contained: true
 
-## Generic options
-lang: ru-RU
+# Общее оформление
 number-sections: true
 toc: true
 toc-title: "Содержание"
 toc-depth: 2
-## Crossref customization
+
+# Кросс-ссылки
 crossref:
   lof-title: "Список иллюстраций"
   lot-title: "Список таблиц"
   lol-title: "Листинги"
-## Bibliography
+
+# Библиография
 bibliography:
   - bib/cite.bib
 csl: _resources/csl/gost-r-7-0-5-2008-numeric.csl
-## Formats
+
 format:
-### Pdf output format
+
   pdf:
     pdf-engine: xelatex
     toc: true
     number-sections: true
-    colorlinks: false
     toc-depth: 2
-    lof: true # List of figures
-    lot: true # List of tables
-#### Document
+    lof: true       # Список иллюстраций
+    lot: true       # Список таблиц
+    colorlinks: false
+
+    # Параметры документа
     documentclass: scrreprt
     papersize: a4
     fontsize: 12pt
     linestretch: 1.5
-#### Language
+    geometry: "top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm"
+
+    # Языки
     babel-lang: russian
     babel-otherlangs: english
-#### Biblatex
+
+    # BibLaTeX
     cite-method: biblatex
-    # biblio-style: gost-numeric
     biblatexoptions:
       - backend=biber
-      - langhook=extras
       - autolang=other*
-#### Misc options
+      - sorting=none
+
+    # Дополнения
     csquotes: true
     indent: true
+
     include-in-header:
       - file: _assets/preamble.tex
-### Docx output format
+
   docx:
     toc: true
     number-sections: true
