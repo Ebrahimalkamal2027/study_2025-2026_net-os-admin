@@ -12,30 +12,32 @@ format:
     transition: fade
 ---
 
-## Введение
+# Введение
 
-#### Значение журналирования
-- Контроль и прозрачность работы ОС  
-- Диагностика ошибок и сбоев  
-- Анализ инцидентов безопасности  
-- Мониторинг активности пользователей и служб  
+## Значение журналирования
 
-#### Цель презентации
-- Рассмотреть механизм журналирования  
-- Изучить архитектуру Event Log  
-- Показать инструменты анализа событий  
+  - Контроль и прозрачность работы ОС  
+  - Диагностика ошибок и сбоев  
+  - Анализ инцидентов безопасности  
+  - Мониторинг активности пользователей и служб  
 
-## Основные понятия
+## Цель презентации
 
-#### Категории событий Windows
-- Information  
-- Warning  
-- Error  
-- Critical  
-- Audit Success  
-- Audit Failure  
+  - Рассмотреть механизм журналирования  
+  - Изучить архитектуру Event Log  
+  - Показать инструменты анализа событий  
 
-## Основные журналы Windows
+# Основные понятия
+
+## Категории событий Windows
+  - Information  
+  - Warning  
+  - Error  
+  - Critical  
+  - Audit Success  
+  - Audit Failure  
+
+# Основные журналы Windows
 
 | Журнал | Назначение |
 |--------|------------|
@@ -45,46 +47,49 @@ format:
 | Setup | Установка и конфигурация |
 | Forwarded Events | События с других машин |
 
-## Интерфейс Event Viewer
+# Интерфейс Event Viewer
 
 ![Общий вид Event Viewer](image/1.png){width=80%}
 
 
-## Архитектура журналирования Windows
+# Архитектура журналирования Windows
 
-#### Основные компоненты
-- Event Providers  
-- Event Log Service  
-- Event Channels  
-- Event IDs  
+## Основные компоненты
 
-#### Типы каналов
-- Administrative  
-- Operational  
-- Analytical  
-- Debug  
+  - Event Providers  
+  - Event Log Service  
+  - Event Channels  
+  - Event IDs  
+
+## Типы каналов
+
+  - Administrative  
+  - Operational  
+  - Analytical  
+  - Debug  
 
 
-## Структура каналов журналов
+# Структура каналов журналов
 
 ![Структура каналов](image/2.png){width=80%}
 
 
-## Инструменты журналирования
+# Инструменты журналирования
 
-#### Event Viewer
-- Просмотр событий  
-- Фильтрация  
-- Экспорт журналов  
-- Создание Custom View  
+## Event Viewer
+
+  - Просмотр событий  
+  - Фильтрация  
+  - Экспорт журналов  
+  - Создание Custom View  
 
 
-## Фильтрация событий
+# Фильтрация событий
 
 ![Фильтрация событий](image/3.png){width=80%}
 
 
-## PowerShell для журналирования
+# PowerShell для журналирования
 
 Основные команды:
 
@@ -94,7 +99,7 @@ Get-WinEvent -LogName Application
 Get-WinEvent -FilterHashtable @{LogName="Security"; ID=4625}
 ```
 
-## Windows Event Forwarding (WEF)
+# Windows Event Forwarding (WEF)
 
 Используется для:
 
@@ -105,9 +110,9 @@ Get-WinEvent -FilterHashtable @{LogName="Security"; ID=4625}
 ![Схема WEF](image/4.png){width=80%}
 
 
-## Журналирование безопасности
+# Журналирование безопасности
 
-#### Основные события Security Log
+## Основные события Security Log
 
 | ID   | Описание                |
 | ---- | ----------------------- |
@@ -119,12 +124,12 @@ Get-WinEvent -FilterHashtable @{LogName="Security"; ID=4625}
 | 1102 | Очистка журнала         |
 
 
-## Пример события 4625
+# Пример события 4625
 
 ![Событие 4625](image/5.png){width=70%}
 
 
-## Расширенный аудит
+# Расширенный аудит
 
 Набор механизмов включает:
 
@@ -134,12 +139,12 @@ Get-WinEvent -FilterHashtable @{LogName="Security"; ID=4625}
 * Group Policy Objects
 
 
-## Настройка Audit Policies
+# Настройка Audit Policies
 
 ![Audit Policies](image/6.png){width=80%}
 
 
-## Sysmon
+# Sysmon
 
 Преимущества:
 
@@ -149,17 +154,17 @@ Get-WinEvent -FilterHashtable @{LogName="Security"; ID=4625}
 * Контроль изменений файлов
 
 
-## Экспорт журнала событий
+# Экспорт журнала событий
 
 ![Экспорт журнала](image/7.png){width=80%}
 
 
-## Создание Custom View
+# Создание Custom View
 
 ![Custom View](image/8.png){width=80%}
 
 
-## Заключение
+# Заключение
 
 * Журналирование — ключевой инструмент администратора
 * Позволяет обнаруживать атаки
@@ -168,4 +173,4 @@ Get-WinEvent -FilterHashtable @{LogName="Security"; ID=4625}
 * Интегрируется с SIEM, PowerShell и Sysmon
 
 
-## Спасибо за внимание!
+# Спасибо за внимание!
